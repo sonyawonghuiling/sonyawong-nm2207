@@ -1,0 +1,149 @@
+html {
+    font-family: "Avenir";
+    font-size: medium;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+}
+
+body {
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.nav-links {
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+.navbar {
+    display: flex;
+    align-items: left;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    padding: 30px;
+    background-color: rgb(120, 173, 234);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+}
+  
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .section {
+    padding-top: 50px;
+}
+
+  .sticky + .header {
+    padding-top: 50px;
+}
+  
+
+.item {
+    font-family: "Avenir";
+    color: rgb(255, 255, 244);
+    padding: 5px;
+    font-size: medium;
+}
+
+.item-bold {
+    font-family: "Avenir";
+    color: rgb(255, 255, 244);
+    padding: 5px;
+    font-size: medium;
+}
+
+.item-credit:hover {
+    color:rgb(255, 255, 244);
+    font-size: medium;
+}
+
+a:link {
+    color:rgb(255, 255, 244);
+    background-color: transparent;
+}
+
+a {
+    color: rgb(255, 255, 244);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(180, 222, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:active {
+    color: rgb(180, 222, 255);
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 32px;
+    font-family: "Avenir";
+    font-weight: bold;
+    color: rgb(255, 255, 244);
+    padding-right: 20px;
+}
+
+.banner {
+    position: relative;
+    background-image: url(../resources/crowd-singapore.jpeg);
+    background-size: 100%;
+    /* background-image: -webkit-linear-gradient(bottom, rgb(97, 165, 217) 0%, rgba(96, 159, 218, 0.559) 99%, rgba(197, 227, 254, 0.5) 100%);
+    background-image: linear-gradient(to top, #fff 0%, rgba(116, 193, 240, 0.35) 99%, rgba(77, 169, 235, 0.5) 100%); */
+    background-position: center;
+    padding: 10px;
+
+}
+
+.banner .banner-title {
+    font-family: "Avenir";
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    font-size: 50px;
+    color: white;
+}
+
+.chart {
+    height:700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category .button {
+    display: inline-block;
+    border-radius: 35px;
+    background-color: rgba(180, 222, 255, 60);
+    border-color: white;
+    padding: 18px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.image {
+    height:700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

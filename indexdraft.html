@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- insert head container to include links to js,css and additional chart software -->
+<head>
+	<meta charset="utf-8">
+    <!-- ensure page fits on all browser devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- add webpage title for identification -->
+    <title>space. homepage</title>
+    <!-- add favicon links to change the icon image within the browser tab, touch of personalisation -->
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="resources/favicon_io/site.webmanifest">
+    <!-- link to plotly and d3 js library -->
+    <script src='https://cdn.plot.ly/plotly-2.18.2.min.js'></script> 
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+
+	<!-- Include Leaflet in your Webpage -->
+	<!-- Add the Leaflet CSS Here:  -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+		crossorigin="" />
+	<!-- Add the Leaflet JavaScript Here:  -->
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""></script>
+
+    <!-- link to fonts library, js file and css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+    <script defer type="text/javascript" src="appscripts/main.js"></script>
+</head>
+
+<body>
+    <!-- enclosing navigation bar + title into a header element -->
+    <header>
+        <!-- navigation bar -->
+        <nav class="navbar" id="navbar">
+            <div class="logo" id="logo">
+                <img src="./resources/project-logo.jpg">
+            </div>
+            <div class="top-bar">
+            <ul class="nav-links">
+                <li><a class="item" href="">Homepage</a></li>
+                <li><a class="item" href="exploration.html">Exploration</a></li>
+                <li><a class="item" href="#help">Evaluation</a></li>
+                <li><a class="item-bold" href="documentation/diary-entry-space.pdf" target="_blank">Diary</a></li>
+                <li><a class="item-bold" href="documentation/final-report-space.pdf" target="_blank">Writeup</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        <div class="banner" id="banner">
+            <h1 class="banner-title">HOW MUCH SPACE IS THERE LEFT IN SINGAPORE?</h1>
+        </div>
+    </header>
+
+    <section id="info" class="section">
+        <h1 style="text-align:center">ABOUT</h1>
+            <p>According to World Data.info, the population of Singapore had grown from 1.65 million in 1960 to 5.45 million in 2021. As one of the smallest countries in the world with a land area of 728km<sup>2</sup>, 
+            we are also one of the most densely populated countries with approximately 8000 people per square kilometre. Not only that, but Singapore has an accelerating growth rate in its population over the last 40 years. 
+            With this overarching threat of overcrowding and overpopulation, the Singapore government still encourages a high influx of immigrants. This makes me wonder whether Singapore can continue to accommodate such a 
+            growth in the future as land, housing, jobs - space - is scarce.</p>
+            <p>This project will be a data story on the spatial availability in Singapore. As a young undergraduate concerned about my place in Singpaore in the future, I believe that many of my peers carry the same concerns
+                as I do. Therefore, I hope that this data story will be able to give a fair glimpse into an illustration of current statistics and make logical predictions about what may come in the near future. 
+            </p>
+       
+    </section> <br>
+
+    <section class="section">
+        <h1 style="text-align:center">POPULATION</h1>
+        <div id="popMap"><!-- Map will be drawn inside here --></div> <br>
+        <script src="./datasets/Singapore_Population_2017.geojson"></script>
+        <p>The animation below will illustrate how the population of Singapore has changed over time.</p>
+        <p>** will insert a video/gif to show population changes **</p>
+
+        <button class="button" id="nextPageButton" onclick="window.location.href='exploration.html'">Learn more.</button>
+
+    </section>
+
+
+
+
+
+</body>

@@ -1,74 +1,92 @@
-html {
+html, body, header {
     font-family: "Avenir";
     font-size: medium;
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-body {
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
+section {
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: justify;
+}
 
+div {
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .nav-links {
     padding: 0;
-  }
+}
 
 li {
     display: inline;
 }
 
 .navbar {
-    display: flex;
+    display: inline-flex;
     align-items: left;
-    overflow: hidden;
     top: 0;
     width: 100%;
-    padding: 30px;
+    padding: 20px;
     background-color: rgb(120, 173, 234);
+    z-index: 1000;
+}
+
+.top-bar {
+    display: inline-flex;
+    align-items: left;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background-color: rgb(120, 173, 234);
+    margin-top: auto;
+    margin-bottom: auto;
+    float: left;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
   }
   
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .section {
-    padding-top: 50px;
-  }
+    padding-top: 20px;
+}
 
-  .sticky + .header {
-    padding-top: 50px;
-  }
-  
+.sticky + .banner {
+    padding-top: 80px;
+}
 
 .item {
     font-family: "Avenir";
     color: rgb(255, 255, 244);
     padding: 5px;
-    font-size: medium;
+    font-size: large;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
 }
 
 .item-bold {
     font-family: "Avenir";
     color: rgb(255, 255, 244);
     padding: 5px;
-    font-size: medium;
-
+    font-size: large;
 }
 
 .item-credit:hover {
     color:rgb(255, 255, 244);
-    font-size: medium;
+    font-size: large;
 }
 
 a:link {
@@ -82,40 +100,39 @@ a {
 }
 
 a:hover {
-    color: rgb(180, 222, 255);
+    color: rgb(186, 223, 251);
     text-decoration: none;
     font-size: 20px;
 }
 
 a:active {
-    color: rgb(180, 222, 255);
+    color: rgb(186, 223, 251);
     text-decoration: none;
 }
 
-.logo {
-    font-size: 32px;
-    font-family: "Avenir";
-    font-weight: bold;
-    color: rgb(255, 255, 244);
-    padding-right: 20px;
+/* Adding logo image specifications to fit nav top bar nicely */
+.logo img {
+    width: 170px;
+    height: auto;
+    padding-right: 0px;
 }
 
-.header {
+#banner {
+    display: inline-block;
     position: relative;
     background-image: url(../resources/crowd-singapore.jpeg);
     background-size: 100%;
-    /* background-image: -webkit-linear-gradient(bottom, rgb(97, 165, 217) 0%, rgba(96, 159, 218, 0.559) 99%, rgba(197, 227, 254, 0.5) 100%);
-    background-image: linear-gradient(to top, #fff 0%, rgba(116, 193, 240, 0.35) 99%, rgba(77, 169, 235, 0.5) 100%); */
-    background-position: center;
-    padding: 10px;
-
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 40px;
+    width: 100%;
 }
 
-.header .header-title {
+#banner .banner-title {
     font-family: "Avenir";
     text-align: center;
     position: relative;
-    padding: 10px;
+    padding: 0;
     font-size: 50px;
     color: white;
 }
@@ -133,14 +150,16 @@ a:active {
     align-items: center;
 }
 
-.category .button {
-    display: inline-block;
+.button {
+    display: inline;
     border-radius: 35px;
-    background-color: rgba(180, 222, 255, 60);
+    background-color: rgba(120, 173, 234, 60);
+    padding: 15px;
     border-color: white;
-    padding: 18px;
+    box-shadow: 5px black;
     font-size: medium;
     font-weight: bold;
+    color: white;
 }
 
 .image {
@@ -149,3 +168,14 @@ a:active {
     margin-left: auto;
     margin-right: auto;
 }
+
+#popMap {
+    height: 500px;
+    width: 800px;
+    margin: auto;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto;
+  }
