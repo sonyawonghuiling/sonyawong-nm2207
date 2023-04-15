@@ -1,0 +1,94 @@
+<head>
+    <meta charset="utf-8">
+    <!-- ensure page fits on all browser devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- add webpage title for identification -->
+    <title>space. exploration</title>
+
+    <!-- add favicon links to change the icon image within the browser tab, touch of personalisation -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../resources/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../resources/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../resources/favicon_io/site.webmanifest">
+
+    <!-- load set of libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+	<script defer type="text/javascript" src="appscripts/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+</head>
+
+<body>
+    <header>
+        <!-- navigation bar -->
+        <nav class="navbar" id="navbar">
+            <div class="logo" id="logo">
+                <img src="../resources/project-logo.jpg">
+            </div>
+            <div class="top-bar">
+            <ul class="nav-links">
+                <li><a class="item" href="../index.html">Homepage</a></li>
+                <li><a class="item" href="exploration.html">Exploration</a></li>
+                <li><a class="item" href="#help">Evaluation</a></li>
+                <li><a class="item-bold" href="../documentation/diary-entry-space.pdf" target="_blank">Diary</a></li>
+                <li><a class="item-bold" href="../documentation/final-report-space.pdf" target="_blank">Writeup</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h1>DATA STORY</h1>
+        <p>Let's first explore the population and the various population indicators within Singapore to get a better understanding of the demographic here.</p>
+        <p style="color: navy">Feel free to click on the legends to aid your understanding of the data trends. Click on the pink buttons to explore the different visualisations of the data.</p>
+        <h2>POPULATION</h2>
+        <div class="charts">
+            <canvas id="populationType"></canvas>
+        </div>
+        <button type="button" id="changePopLine">View Population Make-Up.</button> <br>
+        <p>There has been a consistent and constant upward trend over the years as the population of each type increases. This indicates to us that the population of Singapore will continue to grow over the next couple of years.
+            However, with the limited land in Singapore, the population density will keep rising, creating a potential issue of further overcrowding. This can be taxing on our public infrastructure and amenities such as the public transport system. </p>
+        <p>We could also view the Singapore population types in relation to one another! The pie chart below shows the average number of people in each population type as a proportion of residents and non-residents in Singapore.</p>
+        <div class="charts">
+            <canvas id="populationPie"></canvas>
+        </div>
+        <p>Citizens make up a majority proportion of the population in Singapore, and that there are more non-residents (such as expats, foreign students and those on work passes) than permanent residents. </p>
+        <h2>AN AGEING POPULATION</h2>
+        <p>Besides the scarce land in Singapore, another big challenge we face is the ageing population. Let's take a look at the latest age distribution in Singapore (using 2022 data). The histogram shows a bulk of our population between the ages 30 - 64.
+            In fact, the age distribution seems to be right-skewed which is indicative of a healthy population since there are significantly more youths than elderly.</p>
+        <p style="color: navy">Hover your mouse over each bar in the histogram to see the exact number of residents within the selected age bracket. Click on the pink button to see how the number of youths fare against that of residents aged 65 and above.</p>
+        <div class="charts">
+            <canvas id="ageChart">
+        </div>
+        <button type="button" id="changeAgeView">View Age Discrepancy.</button> <br>
+        <p>From 2000, the number of youths is slowly decreasing, while the number of elderly aged 65 & above is increasing steadily. This highlights the ageing problem as we have more residents aged 65 & above (who are likely to be retired) each year.
+            As the bulk of our population is currently in the mid-range, they will soon move to the elderly range and require support from the smaller younger generation. This would result in an increased old-age dependency ratio.
+            A higher ratio indicates more financial burden and stress on working adults and will lead to social and political instability.</p>
+        <p>What does the ageing population have to do with space in Singapore? Seeing that the life expectancy in Singapore is 83.7 years, it will still be quite some time before our population growth eases.  </p>
+
+        <div class="charts">
+            <h2>DEATH RATE</h2>
+            <canvas id="deathChart"></canvas>
+            <p>We use crude death rate as a measure of the number of deaths annually per 1000 people, scaled to the size of the population.</p>
+            <p>The trend shows a rather constant crude death rate.</p>
+        </div>
+        <div class="charts">
+            <h2>FERTILITY RATES</h2>
+            <canvas id="birthChart"></canvas>
+            <p>View by race as well.</p>
+        </div>
+        <div>
+            <h2>MARRIAGE AND HOUSING</h2>
+        </div>
+        <div class="charts">
+            <canvas id="marriagePie"></canvas>
+        </div>
+    </section>
+
+    <section class="section">
+
+
+    </section>
+
+</body>

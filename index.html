@@ -44,7 +44,7 @@
             <div class="top-bar">
             <ul class="nav-links">
                 <li><a class="item" href="">Homepage</a></li>
-                <li><a class="item" href="exploration.html">Exploration</a></li>
+                <li><a class="item" href="explorationTab/exploration.html">Exploration</a></li>
                 <li><a class="item" href="#help">Evaluation</a></li>
                 <li><a class="item-bold" href="documentation/diary-entry-space.pdf" target="_blank">Diary</a></li>
                 <li><a class="item-bold" href="documentation/final-report-space.pdf" target="_blank">Writeup</a></li>
@@ -57,8 +57,12 @@
         </div>
     </header>
 
-    <section id="info" class="section">
-        <h1 style="text-align:center">ABOUT</h1>
+    <section>
+        <h1>NAVIGATE</h1>
+        <p style="color: navy">Scroll down to find out more about the background of the topic, or use the links in the navigation bar above.</p>
+        <p style="color: navy">Click on "Exploration" to dive straight into the data story, or take a look at my diary entries and final documentation for this project.</p>
+        <p style="color: navy">And, look out for tips along the way! (They'll be blue, just like this)</p>
+        <h1>ABOUT</h1>
             <p>According to World Data.info, the population of Singapore had grown from 1.65 million in 1960 to 5.45 million in 2021. As one of the smallest countries in the world with a land area of 728km<sup>2</sup>, 
             we are also one of the most densely populated countries with approximately 8000 people per square kilometre. Not only that, but Singapore has an accelerating growth rate in its population over the last 40 years. 
             With this overarching threat of overcrowding and overpopulation, the Singapore government still encourages a high influx of immigrants. This makes me wonder whether Singapore can continue to accommodate such a 
@@ -66,22 +70,30 @@
             <p>This project will be a data story on the spatial availability in Singapore. As a young undergraduate concerned about my place in Singpaore in the future, I believe that many of my peers carry the same concerns
                 as I do. Therefore, I hope that this data story will be able to give a fair glimpse into an illustration of current statistics and make logical predictions about what may come in the near future. 
             </p>
-       
-    </section> <br>
+    </section>
 
-    <section class="section">
-        <h1 style="text-align:center">POPULATION</h1>
-        <div id="popMap"><!-- Map will be drawn inside here --></div> <br>
+    <section>
+        <h1>POPULATION</h1>
+        <div class="charts" id="popMap"><!-- Map will be drawn inside here --></div> <br>
         <script src="./datasets/Singapore_Population_2017.geojson"></script>
         <p>The animation below will illustrate how the population of Singapore has changed over time.</p>
         <p>** will insert a video/gif to show population changes **</p>
+        <img class="image" id="population-density-map" src="resources/population-density-img.png">
 
-        <button class="button" id="nextPageButton" onclick="window.location.href='exploration.html'">Learn more.</button>
+        <button class="button" id="nextPageButton" onclick="window.location.href = 'explorationTab/exploration.html';">Learn more.</button> <br>
 
-    </section>
-
-
+    </section> <br>
 
 
+
+
+    <nav class="navbar">
+        <div class="bottom-bar">
+            <ul class="nav-links">
+                <li><a class="item" href="#">Back to Top</a></li>
+                <li><a class="item-credit">Made with blood, sweat and tears. By Sonya Wong A0240100L</a></li>
+            </ul>
+        </div>
+    </nav>
 
 </body>
