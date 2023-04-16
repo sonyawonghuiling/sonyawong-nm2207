@@ -46,7 +46,7 @@ h2 {
 section {
     margin-left: 150px;
     margin-right: 150px;
-    text-align: center;
+    text-align: justify;
 }
 
 div {
@@ -202,11 +202,14 @@ button {
     font-family: "Avenir";
 }
 
-.image {
+img {
     height:700px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    size: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background-size: cover;
+    position: relative;
 }
 
 #popMap {

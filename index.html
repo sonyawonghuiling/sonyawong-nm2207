@@ -17,16 +17,6 @@
     <script src='https://cdn.plot.ly/plotly-2.18.2.min.js'></script> 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
 
-	<!-- Include Leaflet in your Webpage -->
-	<!-- Add the Leaflet CSS Here:  -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-		crossorigin="" />
-	<!-- Add the Leaflet JavaScript Here:  -->
-	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-	crossorigin=""></script>
-
     <!-- link to fonts library, js file and css file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/appstyle.css">
@@ -45,7 +35,6 @@
             <ul class="nav-links">
                 <li><a class="item" href="">Homepage</a></li>
                 <li><a class="item" href="explorationTab/exploration.html">Exploration</a></li>
-                <li><a class="item" href="#help">Evaluation</a></li>
                 <li><a class="item-bold" href="documentation/diary-entry-space.pdf" target="_blank">Diary</a></li>
                 <li><a class="item-bold" href="documentation/final-report-space.pdf" target="_blank">Writeup</a></li>
             </ul>
@@ -54,39 +43,41 @@
 
         <div class="banner" id="banner">
             <h1 class="banner-title">HOW MUCH SPACE IS THERE LEFT IN SINGAPORE?</h1>
+            <h2 style="color:white; text-align:center">A Deeper Exploration of the Population Data in Singapore.</h2>
         </div>
     </header>
 
     <section>
-        <h1>NAVIGATE</h1>
-        <p style="color: navy">Scroll down to find out more about the background of the topic, or use the links in the navigation bar above.</p>
-        <p style="color: navy">Click on "Exploration" to dive straight into the data story, or take a look at my diary entries and final documentation for this project.</p>
-        <p style="color: navy">And, look out for tips along the way! (They'll be blue, just like this)</p>
-        <h1>ABOUT</h1>
-            <p>According to World Data.info, the population of Singapore had grown from 1.65 million in 1960 to 5.45 million in 2021. As one of the smallest countries in the world with a land area of 728km<sup>2</sup>, 
-            we are also one of the most densely populated countries with approximately 8000 people per square kilometre. Not only that, but Singapore has an accelerating growth rate in its population over the last 40 years. 
-            With this overarching threat of overcrowding and overpopulation, the Singapore government still encourages a high influx of immigrants. This makes me wonder whether Singapore can continue to accommodate such a 
-            growth in the future as land, housing, jobs - space - is scarce.</p>
-            <p>This project will be a data story on the spatial availability in Singapore. As a young undergraduate concerned about my place in Singpaore in the future, I believe that many of my peers carry the same concerns
-                as I do. Therefore, I hope that this data story will be able to give a fair glimpse into an illustration of current statistics and make logical predictions about what may come in the near future. 
-            </p>
-    </section>
+        <h1>Welcome</h1>
+        <p>Hi there! SPACE is a data story on a social issue that I resonate with deeply. This is a final project submission as part of a module in the NUS CNM department.</p>
+        <p>I'm Sonya, the creator of this site, and I'm a Year 2 NUS Undergraduate majoring in Political Science.</p> 
+        <a style="color:black; text-decoration: underline" href="https://nm2207.org/2223S2/e0774698/web/">Feel free to explore my other works done for this module here.</a> <br>
+        <br>
+        <p>So, tell me more about yourself!</p>
+        <form id="form1" method="get">
+            What's your name? <input type="text" name="name" id="name1"> <p>
+            What's your major? <input type="text" name="study" id="study1"> <p>
+            <button type="button" onclick="greetingFunction()">Submit.</button>
+        </form>
 
-    <section>
-        <h1>POPULATION</h1>
-        <div class="charts" id="popMap"><!-- Map will be drawn inside here --></div> <br>
-        <script src="./datasets/Singapore_Population_2017.geojson"></script>
-        <p>The animation below will illustrate how the population of Singapore has changed over time.</p>
-        <p>** will insert a video/gif to show population changes **</p>
-        <img class="image" id="population-density-map" src="resources/population-density-img.png">
+        <h1>Getting Around</h1>
+        <p>Before you begin, let me help you along navigating this site!</p>
+        <i style="color: navy">Scroll down to find out more about the background of the topic and just follow the flow accordingly. Or, go ahead and click on the links above in the navigation bar to bring you around. 
+            Click on "Exploration" to dive straight into the data story, or take a look at my diary entries and final documentation for this project.</i>
+        <i style="color: navy">Oh! And, look out for tips along the way to better guide you along the data story! (They'll be blue and italicised, just like this.)</i> <br>
+        
+        <h1>About</h1>
+        <p>SPACE, like its namesake, is a data story on the spatial availability in Singapore. I was inspired by my own worries about finding stability and security in Singapore after I graduate from university. As a young 
+            undergraduate concerned about my place in Singapore in the future, I believe that many of my peers carry the same concerns as I do. This led me to think about the scarcity in Singapore – how we have little land 
+            and resources, yet our population growth is unprecendented, bordering on a problem of overcrowding. Therefore, I hope that this data story will be able to give a more in-depth glimpse into an illustration of 
+            current population statistics and make logical predictions about what may come in the near future.  I seek to answer the big question, "How much space is there left in Singapore?" through looking at population indicators.  
+        </p>
 
+        <i style="color:navy">Click the button below to proceed to the data story.</i> <br> <br>
         <button class="button" id="nextPageButton" onclick="window.location.href = 'explorationTab/exploration.html';">Learn more.</button> <br>
-
     </section> <br>
 
-
-
-
+    <!-- Bottom nav bar -->
     <nav class="navbar">
         <div class="bottom-bar">
             <ul class="nav-links">

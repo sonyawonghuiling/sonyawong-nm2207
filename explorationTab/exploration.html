@@ -13,7 +13,17 @@
     <link rel="manifest" href="../resources/favicon_io/site.webmanifest">
 
     <!-- load set of libraries-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Include Leaflet in your Webpage -->
+	<!-- Add the Leaflet CSS Here:  -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    <!-- Add the Leaflet JavaScript Here:  -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 
 	<script defer type="text/javascript" src="appscripts/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/appstyle.css">
@@ -30,65 +40,130 @@
             <ul class="nav-links">
                 <li><a class="item" href="../index.html">Homepage</a></li>
                 <li><a class="item" href="exploration.html">Exploration</a></li>
-                <li><a class="item" href="#help">Evaluation</a></li>
                 <li><a class="item-bold" href="../documentation/diary-entry-space.pdf" target="_blank">Diary</a></li>
                 <li><a class="item-bold" href="../documentation/final-report-space.pdf" target="_blank">Writeup</a></li>
             </ul>
             </div>
         </nav>
+        <!-- Add image header to fill up the page -->
+        <img src="../resources/Night-view-Singapore.webp">
     </header>
 
     <section>
         <h1>DATA STORY</h1>
-        <p>Let's first explore the population and the various population indicators within Singapore to get a better understanding of the demographic here.</p>
-        <p style="color: navy">Feel free to click on the legends to aid your understanding of the data trends. Click on the pink buttons to explore the different visualisations of the data.</p>
-        <h2>POPULATION</h2>
+        <p>According to World Data.info, the population of Singapore had grown from 1.65 million in 1960 to 5.45 million in 2021. As one of the smallest countries in the world with a land area of 728km<sup>2</sup>, 
+            we are also one of the most densely populated countries with approximately 8000 people per square kilometre. Not only that, but Singapore has had an accelerating growth rate in its population over 
+            the last 40 years. Even with this overarching threat of overcrowding and overpopulation, the Singapore government still encourages a high influx of immigrants. 
+        </p> 
+        <p>Can Singapore continue to accommodate such a growth in the coming future while land and housing remain scarce? Let's take a deeper look behind the population and demographics for a clue.</p> <br>
+        
+        <h2>TIMELAPSE OF SINGAPORE'S SATELITTE IMAGES</h2>
+        <!-- for the tips -->
+        <i style="color:navy">Press the Play button on the left-hand side of the white bar below to see a timelapse of Singapore's satellite images over 40 years. Click the '+' sign on the right to zoom into the map. Refresh the page if the timelapse is not showing!</i> <br>
+        <!-- store all charts in div container class="charts" to standardise canvas container size-->
+        <div class="charts">
+            <iframe width="1200" height="400" src="https://earthengine.google.com/iframes/timelapse_player_embed.html#v=1.31673,103.84214,9.851,latLng&t=0.67&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p>You can see how Singapore has undergone heavy urban development and even land reclamation processes. Our current land area stands at approximately 279.6 square miles (724.2 square kilometers). The government aims to expand our land area by 
+            an additional 8% to 300 square miles by 2030. While this means that we can theoretically just create more land if we ever run out, this plan is not as feasible as one might think. Land reclamation is both expensive and difficult, no surprise there.
+            The process is arduous and involves an unimaginable amount of purchased sand. Not to mention, a large team of labourers and special equipment are needed for such a task. Rome wasn't built in a day either. Furthermore, there are also dire environmental
+            consequences such as the extensive loss of marine habitats along the shores of Singapore. Therefore, land scarcity in Singapore will still remain as a challege in the future. 
+            Even so, Singapore has adapted to this problem well. The efficient high-rised housing system and extensive public transport system helps to alleviate the concerns of overpopulation. So while we cannot rely on land reclamation, we can always opt to
+            expand upwards, or even downwards to help create more space for ourselves.
+        </p>
+
+        <p>Now, let's explore the population and the various population indicators within Singapore to get a better understanding of the demographic here, and to help us better answer the question.</p>
+        <i style="color: navy">Feel free to click around on the legends (on the left) to aid your understanding of the data trends by removing some data from a cluttered view. Click on any of the pink buttons to explore the different visualisations of the data.</i>
+        
+        <h2>POPULATION CATEGORIES</h2>
         <div class="charts">
             <canvas id="populationType"></canvas>
         </div>
+        <!-- Button with unique ID to for eventListener, change view of data -->
         <button type="button" id="changePopLine">View Population Make-Up.</button> <br>
-        <p>There has been a consistent and constant upward trend over the years as the population of each type increases. This indicates to us that the population of Singapore will continue to grow over the next couple of years.
-            However, with the limited land in Singapore, the population density will keep rising, creating a potential issue of further overcrowding. This can be taxing on our public infrastructure and amenities such as the public transport system. </p>
-        <p>We could also view the Singapore population types in relation to one another! The pie chart below shows the average number of people in each population type as a proportion of residents and non-residents in Singapore.</p>
+        <p>There has been a consistent and constant upward trend over the years as the population of each type increases. An outlier of this significant pattern is the data from 2021, which we can attribute to the global pandemic where travel into Singapore was severly restricted.
+            This trend indicates to us that the population of Singapore will continue to grow over the next couple of years. However, with the limited land in Singapore, the population density will keep rising, creating a potential issue of further overcrowding. This can be taxing 
+            on our public infrastructure and amenities such as the public transport system. Besides that, as housing and jobs are also scarce, competition in Singapore will get even higher, which is likely to affect social, political and economic attitudes around here. </p>
+        <p>We could also view the Singapore population types in relation to one another! The pie chart below shows the average number of people in each population type as a proportion of residents and non-residents in Singapore. Citizens make up a majority proportion of the 
+            population in Singapore, and that there are more non-residents (such as expats, foreign students and those on work passes) than permanent residents. 
+        </p>
         <div class="charts">
             <canvas id="populationPie"></canvas>
         </div>
-        <p>Citizens make up a majority proportion of the population in Singapore, and that there are more non-residents (such as expats, foreign students and those on work passes) than permanent residents. </p>
+        
+        <h2>POPULATION DENSITY</h2>
+        <div class="charts" id="popMap""></div>
+        <script src="../datasets/Singapore_Population_2017.geojson"></script>
+
         <h2>AN AGEING POPULATION</h2>
-        <p>Besides the scarce land in Singapore, another big challenge we face is the ageing population. Let's take a look at the latest age distribution in Singapore (using 2022 data). The histogram shows a bulk of our population between the ages 30 - 64.
-            In fact, the age distribution seems to be right-skewed which is indicative of a healthy population since there are significantly more youths than elderly.</p>
-        <p style="color: navy">Hover your mouse over each bar in the histogram to see the exact number of residents within the selected age bracket. Click on the pink button to see how the number of youths fare against that of residents aged 65 and above.</p>
+        <p>Besides the scarce land and resources in Singapore, another big challenge we face is the ageing population. Let's take a look at the latest age distribution in Singapore (using 2022 data). The histogram shows a bulk of our population between the ages 30 - 64.
+            In fact, the age distribution is right-skewed which seems to be indicative of a healthy population since there are significantly more youths than elderly.</p>
+        <i style="color: navy">Hover your mouse over each bar in the histogram to see the exact number of residents within the selected age bracket. Click on the pink buttons to see the age distribution by gender.</i>
         <div class="charts">
             <canvas id="ageChart">
         </div>
-        <button type="button" id="changeAgeView">View Age Discrepancy.</button> <br>
+        <button type="button" id="changeToFullDist">View Full Age Distribution.</button> <button type="button" id="changeToMaleChart">View Male Age Distribution.</button> <button type="button" id="changeToFemaleChart">View Female Age Distribution.</button>  <br>
+        <p>There doesn't seem to be significant difference between the age distributions by gender. Let's scrutinise this age data and put it into a dual line graph of number of youths aged 19 & below and number of elderly aged 65 & above against time. </p>
+        <div class="charts">
+            <canvas id="ageLinePlot">
+        </div>
         <p>From 2000, the number of youths is slowly decreasing, while the number of elderly aged 65 & above is increasing steadily. This highlights the ageing problem as we have more residents aged 65 & above (who are likely to be retired) each year.
-            As the bulk of our population is currently in the mid-range, they will soon move to the elderly range and require support from the smaller younger generation. This would result in an increased old-age dependency ratio.
-            A higher ratio indicates more financial burden and stress on working adults and will lead to social and political instability.</p>
-        <p>What does the ageing population have to do with space in Singapore? Seeing that the life expectancy in Singapore is 83.7 years, it will still be quite some time before our population growth eases.  </p>
-
+            As the bulk of our population is currently in the mid-range, they will soon move to the elderly range and require support from the smaller younger generation that keeps on shrinking. This would soon lead to an exhorbitant old-age dependency ratio.
+            A higher ratio indicates more financial burden and stress on working adults and will lead to social and political instability. Therefore, our initial right-skewed data was not healthy at all, but rather already indicative of a growing ageing population.
+        </p>
+        <p>What does the ageing population have to do with space in Singapore? Seeing that the life expectancy in Singapore is 83.7 years, it will still be quite some time before our population growth eases. Take a look at the life expectancy graph below. A noticeable trend is that 
+            the overall life expectancy in Singapore has been increasing over time. While this is good as it means our people are maintaining themselves well and staying healthier, it inadvertently contributes to a prolonged and high old-age dependency ratio.
+        </p>
+        <i style="color:navy">Click on the pink buttons to view the overall life expectancy and life expectancy by gender. Click on the third button to add a new trendline of life expectancy at age 65 years to the current view.</i>
         <div class="charts">
-            <h2>DEATH RATE</h2>
-            <canvas id="deathChart"></canvas>
-            <p>We use crude death rate as a measure of the number of deaths annually per 1000 people, scaled to the size of the population.</p>
-            <p>The trend shows a rather constant crude death rate.</p>
+            <canvas id="lifeExpChart">
         </div>
+        <button type="button" id="totalLifeExp">View Overall Life Expectancy.</button> <button type="button" id="genderLifeExp">View Life Expectancy by Gender.</button> <button type="button" id="elderlyLifeExp">View Life Expectancy at Age 65 Years.</button>
+        <p>Females have a higher life expectancy than males in Singapore. The scatter trend of "Life Expectancy at Age 65 Years" shows us how many years someone at age 65 years old has left to live. As such, it is likely that the ageing population problem will
+            continue to persist for another 20 years minimally. 
+        </p>
+        <p>Let's move on to the marital status of residents. It is no secret that marriage is highly valued in Singapore, and that children are even better. For the average person, marriage comes with benefits such as being able to BTO and get a new HDB flat.
+            Home ownership is a pretty big thing, and it is an important factor in helping to answer our question. How can there be space for us in Singapore if we can't even own our own homes in Singapore? It is expected that marriage will thus be a major category
+            in the marital status pie chart. The dataset only starts from those aged 15 and above, for obvious reasons. 
+        </p>
+        <i style="color:navy">Click on the pink buttons to toggle between the marital status of residents in Singapore and the ratio of marriages to divorces in 2021.</i>
+
+        <h2>MARITAL STATUS OF RESIDENTS AGED 15 & ABOVE</h2>
         <div class="charts">
-            <h2>FERTILITY RATES</h2>
-            <canvas id="birthChart"></canvas>
-            <p>View by race as well.</p>
+            <canvas id="marriageChart"></canvas>
         </div>
-        <div>
-            <h2>MARRIAGE AND HOUSING</h2>
-        </div>
+        <button type="button" id="changeToDivorceView">View Marriages : Divorces.</button> <button type="button" id="changeToMarriageView">View Marital Status.</button>
+        <p>As expected, marriage takes a large chunk of the pie. The ratio of marriages to divorces can also help us to determine a proportion of 'unsuccessful marriages', by taking divorces/marriages. Then we can derive the proportion of 'successful marriages'. This
+            number was then used in the following section to construct a bubble chart to show an intersectional linkage of marriage, fertility and housing.
+        </p>
+        <h2>RESIDENTIAL HOUSEHOLDS</h2>
+        <p>The bubble chart below shows the relationship between the proportion of successful marriages, of married couples with children, and the average number of children for ever-married females. The data was scaled by (x10) to better illustrate this relationship.
+            Earlier data bubbles are likely to be bigger as the average number of children per female has declined to 1.6 in 2021, compared to 2.1 in 2000. Data bubbles nearer to the right on the x-axes indicate more successful marriages, while data bubbles nearer to
+            the top on the y-axes show a higher likelihood of owning a home, while being married with children. 
+        </p>
         <div class="charts">
-            <canvas id="marriagePie"></canvas>
+            <canvas id="mixedBubbleChart"></canvas>
         </div>
-    </section>
+        <p>This data visualisation highlights that the cyan (more recent) bubbles are lower on the y-axes, indicating that the likelihood of owning a home with a spouse and children has decreased over the years.</p> <br>
 
-    <section class="section">
+        <h1>CONCLUSION</h1>
+        <p>With the information we have so far, there are significant trendlines in our data that support the growing concerns on the limited space in Singapore. However, there are more factors that need to be considered and taken into account before we can deduce that 
+            there is no future left for us in Singapore. Some of such factors include governmental policies to mitigate overcrowding. According to the National Population and Talent Division, Singapore takes in a carefully controlled number of new citizens and Permanent 
+            Residents (PR) each year, to moderate the impact of low birth rates and ageing. New citizenships are selectively granted to individuals who are committed to making Singapore their home. This problem is multi-faceted and complex, and cannot be accurately 
+            answered through reviewing the data above.</p>
+        <p>The current data points towards having decreasing space left in Singapore over time, but I believe within such limited boundaries, there will still be space for us here. It is also extremely likely that our generation will receive the brunt of this problem as we 
+            will face the numerous and compounding problems that have already started or that we are even yet to know of. However, I believe that the population growth will slow and plateau eventually, and that the severity of the ageing problem will ease up after 20 years,
+            which gives hope for the next generation after us.</p> <br>
+    </section> <br>
 
-
-    </section>
+    <!-- Bottom nav bar -->
+    <nav class="navbar">
+        <div class="bottom-bar">
+            <ul class="nav-links">
+                <li><a class="item" href="#">Back to Top</a></li>
+                <li><a class="item-credit">Made with blood, sweat and tears. By Sonya Wong A0240100L</a></li>
+            </ul>
+        </div>
+    </nav>
 
 </body>
